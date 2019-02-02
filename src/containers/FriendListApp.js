@@ -3,18 +3,18 @@ import styles from './FriendListApp.css';
 import { connect } from 'react-redux';
 
 import { addFriend, deleteFriend, starFriend } from '../actions/FriendsActions';
-import { FriendList, AddFriendInput } from '../components';
+import { chagePage } from '../actions/PageActions';
+import { FriendList, AddFriendInput, Pagination } from '../components';
 
 class FriendListApp extends Component {
   render() {
-    const {
-      friendlist: { friendsById }
-    } = this.props;
+    const { friendsById, pagination } = this.props;
 
     const actions = {
       addFriend: this.props.addFriend,
       deleteFriend: this.props.deleteFriend,
-      starFriend: this.props.starFriend
+      starFriend: this.props.starFriend,
+      chagePage: this.props.chagePage
     };
 
     return (
@@ -22,13 +22,18 @@ class FriendListApp extends Component {
         <h1>The FriendList</h1>
         <AddFriendInput addFriend={actions.addFriend} />
         <FriendList friends={friendsById} actions={actions} />
+        <Pagination {...pagination} onPageChange={actions.chagePage} />
       </div>
     );
   }
 }
 
-function mapStateToProps(state) {
-  return state;
+function mapStateToProps({ friendlist: { friendsById }, pagination }) {
+  const { limit, page } = pagination;
+  return {
+    friendsById: friendsById.slice(limit - limit * page, limit),
+    pagination
+  };
 }
 
 export default connect(
@@ -36,6 +41,7 @@ export default connect(
   {
     addFriend,
     deleteFriend,
-    starFriend
+    starFriend,
+    chagePage
   }
 )(FriendListApp);
