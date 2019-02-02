@@ -3,25 +3,23 @@ import styles from './FriendList.css';
 import FriendListItem from './FriendListItem';
 
 class FriendList extends Component {
-  render () {
+  render() {
     return (
       <ul className={styles.friendList}>
-        {
-          this.props.friends.map((friend, index) => {
-            return (
-              <FriendListItem
-                key={index}
-                id={index}
-                name={friend.name}
-                starred={friend.starred}
-                {...this.props.actions} />
-            );
-          })
-        }
+        {this.props.friends.map((friend, index) => {
+          return (
+            <FriendListItem
+              key={index}
+              id={index}
+              name={friend.name}
+              starred={friend.starred}
+              {...this.props.actions}
+            />
+          );
+        })}
       </ul>
     );
   }
-
 }
 
 FriendList.propTypes = {
