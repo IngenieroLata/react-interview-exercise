@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 
 import { addFriend, deleteFriend, starFriend } from '../actions/FriendsActions';
 import { chagePage } from '../actions/PageActions';
-import { FriendList, AddFriendInput, Pagination } from '../components';
+import { FriendList, AddFriendForm, Pagination } from '../components';
 
 class FriendListApp extends Component {
   render() {
@@ -20,7 +20,7 @@ class FriendListApp extends Component {
     return (
       <div className={styles.friendListApp}>
         <h1>The FriendList</h1>
-        <AddFriendInput addFriend={actions.addFriend} />
+        <AddFriendForm addFriend={actions.addFriend} />
         <FriendList friends={friendsById} actions={actions} />
         <Pagination {...pagination} onPageChange={actions.chagePage} />
       </div>
@@ -30,8 +30,9 @@ class FriendListApp extends Component {
 
 function mapStateToProps({ friendlist: { friendsById }, pagination }) {
   const { limit, page } = pagination;
+  const offset = limit * page;
   return {
-    friendsById: friendsById.slice(limit - limit * page, limit),
+    friendsById: friendsById.slice(offset - limit, offset),
     pagination
   };
 }

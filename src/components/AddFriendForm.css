@@ -1,0 +1,18 @@
+:local(.form) {
+  background-color: white;
+  border-bottom: 1px solid #abaaaa;
+  padding-bottom: 1em;
+}
+
+:local(.addFriendInput) {
+  border-radius: 0;
+  border-color: #abaaaa;
+  border-left: 0;
+  border-right: 0;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #5c75b0;
+  border-color: #5c75b0;
+}

@@ -4,15 +4,18 @@ const initialState = {
   friendsById: [
     {
       name: 'Theodore Roosevelt',
-      starred: true
+      starred: true,
+      gender: 'male'
     },
     {
       name: 'Abraham Lincoln',
-      starred: false
+      starred: false,
+      gender: 'male'
     },
     {
       name: 'George Washington',
-      starred: false
+      starred: false,
+      gender: 'male'
     }
   ]
 };
@@ -22,12 +25,7 @@ export default function friends(state = initialState, action) {
     case types.ADD_FRIEND:
       return {
         ...state,
-        friendsById: [
-          ...state.friendsById,
-          {
-            name: action.name
-          }
-        ]
+        friendsById: [...state.friendsById, action.payload]
       };
     case types.DELETE_FRIEND:
       return {

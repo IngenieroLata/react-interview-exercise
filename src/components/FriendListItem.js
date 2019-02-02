@@ -14,6 +14,9 @@ class FriendListItem extends Component {
           <div>
             <small>xx friends in common</small>
           </div>
+          <div>
+            <small>{this.props.gender}</small>
+          </div>
         </div>
         <div className={styles.friendActions}>
           <button
