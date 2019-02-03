@@ -12,6 +12,7 @@ const Pagination = ({ total, page, limit, onPageChange }) => {
       ...pagesDOM,
       <li
         key={i}
+        data-testid="page"
         className={classNames({ active: i === page })}
         onClick={() => i !== page && onPageChange(i)}>
         <a href="#">{i}</a>
@@ -22,13 +23,13 @@ const Pagination = ({ total, page, limit, onPageChange }) => {
   return (
     <nav aria-label="Page navigation" className={styles.paginationContainer}>
       <ul className="pagination pagination-sm">
-        <li onClick={() => onPageChange(1)}>
+        <li data-testid="first" onClick={() => onPageChange(1)}>
           <a href="#" aria-label="Previous">
             <span aria-hidden="true">&laquo;</span>
           </a>
         </li>
         {pagesDOM}
-        <li onClick={() => onPageChange(pages)}>
+        <li data-testid="last" onClick={() => onPageChange(pages)}>
           <a href="#" aria-label="Next">
             <span aria-hidden="true">&raquo;</span>
           </a>

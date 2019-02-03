@@ -6,7 +6,7 @@ import { addFriend, deleteFriend, starFriend } from '../actions/FriendsActions';
 import { chagePage } from '../actions/PageActions';
 import { FriendList, AddFriendForm, Pagination } from '../components';
 
-class FriendListApp extends Component {
+export class FriendListApp extends Component {
   render() {
     const { friendsById, pagination } = this.props;
 

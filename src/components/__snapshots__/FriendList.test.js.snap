@@ -1,0 +1,28 @@
+exports[`<FriendList /> Matches the snapshot render 1`] = `
+<ul>
+  <FriendListItem
+    deleteFriend={[Function]}
+    gender="male"
+    id={0}
+    key="0"
+    name="Theodore Roosevelt"
+    starFriend={[Function]}
+    starred={true} />
+  <FriendListItem
+    deleteFriend={[Function]}
+    gender="male"
+    id={1}
+    key="1"
+    name="Abraham Lincoln"
+    starFriend={[Function]}
+    starred={false} />
+  <FriendListItem
+    deleteFriend={[Function]}
+    gender="male"
+    id={2}
+    key="2"
+    name="George Washington"
+    starFriend={[Function]}
+    starred={false} />
+</ul>
+`;

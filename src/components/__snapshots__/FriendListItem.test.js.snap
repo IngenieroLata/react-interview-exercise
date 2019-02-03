@@ -1,0 +1,39 @@
+exports[`<FriendListItem /> Matches the snapshot render 1`] = `
+<li>
+  <div>
+    <div
+      data-testid="name">
+      <span>
+        Jane Doe
+      </span>
+    </div>
+    <div>
+      <small>
+        xx friends in common
+      </small>
+    </div>
+    <div
+      data-testid="gender">
+      <small>
+        female
+      </small>
+    </div>
+  </div>
+  <div>
+    <button
+      className="btn btn-default undefined"
+      data-testid="star"
+      onClick={[Function]}>
+      <i
+        className="fa fa-star" />
+    </button>
+    <button
+      className="btn btn-default undefined"
+      data-testid="delete"
+      onClick={[Function]}>
+      <i
+        className="fa fa-trash" />
+    </button>
+  </div>
+</li>
+`;

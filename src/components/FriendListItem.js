@@ -5,33 +5,39 @@ import styles from './FriendListItem.css';
 
 class FriendListItem extends Component {
   render() {
+    const { id, name, gender, starFriend, starred, deleteFriend } = this.props;
+
     return (
       <li className={styles.friendListItem}>
         <div className={styles.friendInfos}>
-          <div>
-            <span>{this.props.name}</span>
+          <div data-testid="name">
+            <span>{name}</span>
           </div>
           <div>
             <small>xx friends in common</small>
           </div>
-          <div>
-            <small>{this.props.gender}</small>
-          </div>
+          {gender && (
+            <div data-testid="gender">
+              <small>{gender}</small>
+            </div>
+          )}
         </div>
         <div className={styles.friendActions}>
           <button
+            data-testid="star"
             className={`btn btn-default ${styles.btnAction}`}
-            onClick={() => this.props.starFriend(this.props.id)}>
+            onClick={() => starFriend(id)}>
             <i
               className={classnames('fa', {
-                'fa-star': this.props.starred,
-                'fa-star-o': !this.props.starred
+                'fa-star': starred,
+                'fa-star-o': !starred
               })}
             />
           </button>
           <button
+            data-testid="delete"
             className={`btn btn-default ${styles.btnAction}`}
-            onClick={() => this.props.deleteFriend(this.props.id)}>
+            onClick={() => deleteFriend(id)}>
             <i className="fa fa-trash" />
           </button>
         </div>
@@ -44,7 +50,14 @@ FriendListItem.propTypes = {
   id: PropTypes.number.isRequired,
   name: PropTypes.string.isRequired,
   starred: PropTypes.bool,
-  starFriend: PropTypes.func.isRequired
+  gender: PropTypes.string,
+  starFriend: PropTypes.func.isRequired,
+  deleteFriend: PropTypes.func.isRequired
+};
+
+FriendListItem.defaultProps = {
+  starred: false,
+  gender: ''
 };
 
 export default FriendListItem;

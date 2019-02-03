@@ -1,0 +1,44 @@
+exports[`<AddFriendForm /> Matches the snapshot render 1`] = `
+<form
+  action=""
+  onSubmit={[Function]}>
+  <div
+    className="form-group">
+    <input
+      autoFocus="true"
+      className="form-control"
+      name="name"
+      onChange={[Function]}
+      placeholder="Type the name of a friend"
+      type="text"
+      value="" />
+  </div>
+  <label
+    className="radio-inline">
+    <input
+      checked={false}
+      name="gender"
+      onChange={[Function]}
+      type="radio"
+      value="male" />
+    Male
+  </label>
+  <label
+    className="radio-inline">
+    <input
+      checked={false}
+      name="gender"
+      onChange={[Function]}
+      type="radio"
+      value="female" />
+    Female
+  </label>
+  <button
+    className="pull-right btn btn-primary btn-xs"
+    type="submit">
+    Extra small button
+  </button>
+  <div
+    className="clearfix" />
+</form>
+`;

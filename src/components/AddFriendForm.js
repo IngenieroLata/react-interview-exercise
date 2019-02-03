@@ -7,8 +7,8 @@ class AddFriendForm extends Component {
   constructor(props, context) {
     super(props, context);
     this.state = {
-      name: this.props.name || '',
-      gender: this.props.gender || ''
+      name: '',
+      gender: ''
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);

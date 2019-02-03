@@ -1,0 +1,42 @@
+exports[`<FriendListApp /> Matches the snapshot render 1`] = `
+<div>
+  <h1>
+    The FriendList
+  </h1>
+  <AddFriendForm
+    addFriend={[Function]} />
+  <FriendList
+    actions={
+      Object {
+        "addFriend": [Function],
+        "chagePage": [Function],
+        "deleteFriend": undefined,
+        "starFriend": undefined,
+      }
+    }
+    friends={
+      Array [
+        Object {
+          "gender": "male",
+          "name": "Theodore Roosevelt",
+          "starred": true,
+        },
+        Object {
+          "gender": "male",
+          "name": "Abraham Lincoln",
+          "starred": false,
+        },
+        Object {
+          "gender": "male",
+          "name": "George Washington",
+          "starred": false,
+        },
+      ]
+    } />
+  <Pagination
+    limit={2}
+    onPageChange={[Function]}
+    page={1}
+    total={3} />
+</div>
+`;
