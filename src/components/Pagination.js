@@ -4,6 +4,10 @@ import classNames from 'classnames';
 import styles from './Pagination.css';
 
 const Pagination = ({ total, page, limit, onPageChange }) => {
+  if (total < limit) {
+    return null;
+  }
+
   const pages = Math.ceil(total / limit);
   let pagesDOM = [];
 
