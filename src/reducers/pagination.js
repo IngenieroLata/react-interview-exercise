@@ -13,6 +13,17 @@ export default function pagination(state = initialState, action) {
         ...state,
         page: action.page
       };
+    case types.DELETE_FRIEND:
+      return {
+        ...state,
+        total: state.total - 1,
+        page: 1
+      };
+    case types.ADD_FRIEND:
+      return {
+        ...state,
+        total: state.total + 1
+      };
 
     default:
       return state;
