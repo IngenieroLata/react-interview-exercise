@@ -51,7 +51,7 @@ class AddFriendForm extends Component {
           Female
         </label>
         <button type="submit" className="pull-right btn btn-primary btn-xs">
-          Extra small button
+          Add Friend
         </button>
 
         <div className="clearfix" />
